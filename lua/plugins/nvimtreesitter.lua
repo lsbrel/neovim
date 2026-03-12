@@ -3,6 +3,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     lazy = false,
+    branch = "main",
     config = function()
       local trs = require("nvim-treesitter")
       trs.install({
