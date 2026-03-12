@@ -4,11 +4,16 @@ return {
     build = ":TSUpdate",
     lazy = false,
     config = function()
-      require("nvim-treesitter").setup({
-        ensure_installed = { "lua", "python", "typescript" },
-        highlight = {
-          enable = true,
-       },
+      local trs = require("nvim-treesitter")
+      trs.install({
+        "lua", "python", "php", "terraform"
+      })
+      trs.setup({})
+      vim.api.nvim_create_autocmd('FileType', {
+        pattern = {"python", "php", "terraform"},
+        callback = function ()
+          vim.treesitter.start()
+        end
       })
     end,
   },
