@@ -6,6 +6,8 @@ return {
       vim.lsp.enable("ts_ls")
       vim.lsp.enable("pylsp")
       vim.lsp.enable("terraformls")
+      vim.lsp.enable("docker_compose_language_service")
+      vim.lsp.enable("sqls")
 
       vim.lsp.config("lua_ls", {
         settings = {

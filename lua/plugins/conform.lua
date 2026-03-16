@@ -5,7 +5,10 @@ return {
       formatters_by_ft = {
         javascript = {"prettier"},
         typescript = {"prettier"},
-        terraform = {"terraform_fmt"}
+        terraform = {"terraform_fmt"},
+        python = {"black"},
+        sql = {"sqlfmt"},
+        lua = {"stylua"}
       }
     })
   end
