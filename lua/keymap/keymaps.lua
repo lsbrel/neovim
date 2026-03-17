@@ -1,9 +1,9 @@
 -- Telescope
 local builtin = require("telescope.builtin")
 
-vim.keymap.set("n", "<C-p>", builtin.find_files, { desc = "Encontrar Arquivos via telescop"})
-vim.keymap.set("n", "<C-f>", builtin.current_buffer_fuzzy_find, { desc = "Encontrar texto no mesmo arquivo"})
-vim.keymap.set("n", "<C-o>", builtin.buffers, { desc = "Buscar por buffers"})
+vim.keymap.set("n", "<C-p>", builtin.find_files, { desc = "Encontrar Arquivos via telescop" })
+vim.keymap.set("n", "<C-f>", builtin.current_buffer_fuzzy_find, { desc = "Encontrar texto no mesmo arquivo" })
+vim.keymap.set("n", "<C-o>", builtin.buffers, { desc = "Buscar por buffers" })
 
 -- Neotree
 vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>")
@@ -13,7 +13,7 @@ vim.keymap.set("n", "<leader><Left>", "<C-w>h")
 
 -- Comments
 local comments = require("Comment.api")
-vim.keymap.set({"n", "v"}, "<C-;", comments.toggle.blockwise.current)
+vim.keymap.set({ "n", "v" }, "<C-;", comments.toggle.blockwise.current)
 
 -- Geral
 vim.keymap.set("n", "<C-s>", ":w<CR>") -- Salvar
@@ -33,6 +33,6 @@ vim.keymap.set("n", "<C-Up>", ":-10<CR>") -- Sobe meia tela
 vim.keymap.set("n", "<C-Down>", ":+10<CR>") -- Desce meia tela
 
 -- Formatar
-vim.keymap.set("n", "<leader>f", function ()
-  require("conform").format()
+vim.keymap.set("n", "<leader>f", function()
+	require("conform").format()
 end)
