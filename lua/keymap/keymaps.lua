@@ -20,7 +20,28 @@ vim.keymap.set("n", "<C-s>", ":w<CR>") -- Salvar
 vim.keymap.set("n", "<C-z>", ":u<CR>") -- Desfazer
 vim.keymap.set("v", "<C-x>", "d") -- Recortar
 vim.keymap.set("v", "<C-c>", "y") -- Copiar
-vim.keymap.set("n", "<leader>q", ":q!<CR>") -- Sair de tudo
+vim.keymap.set("n", "<C-v>", "p") -- Colar
+vim.keymap.set("n", "<C-a>", "G$Vgg") -- Selecionar tudo
+
+vim.keymap.set("n", "<leader>q", function()
+	if vim.bo.filetype == "neo-tree" then
+		vim.cmd(":qa")
+	else
+		local current = vim.api.nvim_get_current_buf()
+		vim.cmd("bnext")
+
+		if vim.bo.filetype == "neo-tree" then
+			vim.cmd("bnext")
+		end
+
+		vim.api.nvim_buf_delete(current, { force = false })
+
+		local buffer_count = vim.fn.getbufinfo({ buflisted = 1 })
+    if #buffer_count == 1 then
+      vim.cmd("Neotree show")
+    end
+	end
+end) -- Sair/fechar buffer
 
 vim.keymap.set("n", "<C-CR>", "o") -- Inserir na proxima linha
 vim.keymap.set("n", "<C-A-CR>", "A") -- Inserir no final da linha
