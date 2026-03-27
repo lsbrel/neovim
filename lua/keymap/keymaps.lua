@@ -37,13 +37,17 @@ vim.keymap.set("n", "<leader>q", function()
 		vim.api.nvim_buf_delete(current, { force = false })
 
 		local buffer_count = vim.fn.getbufinfo({ buflisted = 1 })
-    if #buffer_count == 1 then
-      vim.cmd("Neotree show")
-    end
+		if #buffer_count == 1 then
+      vim.cmd("Neotree focus")
+		end
 	end
 end) -- Sair/fechar buffer
 
 vim.keymap.set("n", "<C-CR>", "o") -- Inserir na proxima linha
+vim.keymap.set("i", "<C-CR>", "<Esc>o") -- Inserir na proxima linha
+
+vim.keymap.set("n", "<CR>", "i") -- inserir com enter
+
 vim.keymap.set("n", "<C-A-CR>", "A") -- Inserir no final da linha
 vim.keymap.set("n", "<A-CR>", "I") -- Inserir no começo
 
@@ -54,6 +58,10 @@ vim.keymap.set("n", "<C-Up>", ":-10<CR>") -- Sobe meia tela
 vim.keymap.set("n", "<C-Down>", ":+10<CR>") -- Desce meia tela
 
 -- Formatar
-vim.keymap.set("n", "<leader>f", function()
+vim.keymap.set("n", "<C-f>", function()
 	require("conform").format()
 end)
+
+-- Bufferline
+vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>", { silent = true })
+vim.keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { silent = true })

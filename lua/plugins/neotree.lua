@@ -11,7 +11,7 @@ return {
 		config = function()
 			require("neo-tree").setup({
 				window = {
-					position = "left",
+					position = "right",
 				},
 				hijack_netrw_behavior = "open_default",
 			})

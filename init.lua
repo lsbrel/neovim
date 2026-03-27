@@ -2,7 +2,7 @@
 vim.opt.termguicolors = true
 
 -- Configurações lazy
-require("config.lazy")
+ require("config.lazy")
 
 -- Configurações core
 require("config.core")

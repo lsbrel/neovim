@@ -4,7 +4,7 @@ return {
 	config = function()
 		require("lualine").setup()
 		local options = {
-			theme = "dracula",
+			theme = "vscode",
 		}
 	end,
 }

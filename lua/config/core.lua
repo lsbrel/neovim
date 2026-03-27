@@ -18,4 +18,5 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 vim.diagnostic.config({ virtual_text = true })
 
 -- Tema
-vim.cmd("colorscheme tokyonight-night")
+vim.cmd("colorscheme vscode")
+vim.o.background = "dark"
