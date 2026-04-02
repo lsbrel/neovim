@@ -9,6 +9,7 @@ return {
 			vim.lsp.enable("docker_compose_language_service")
 			vim.lsp.enable("sqls")
 			vim.lsp.enable("gopls")
+			vim.lsp.enable("clangd")
 
 			vim.lsp.config("lua_ls", {
 				settings = {

@@ -2,7 +2,6 @@
 local builtin = require("telescope.builtin")
 
 vim.keymap.set("n", "<C-p>", builtin.find_files, { desc = "Encontrar Arquivos via telescop" })
-vim.keymap.set("n", "<C-f>", builtin.current_buffer_fuzzy_find, { desc = "Encontrar texto no mesmo arquivo" })
 vim.keymap.set("n", "<C-o>", builtin.buffers, { desc = "Buscar por buffers" })
 
 -- Neotree
@@ -67,5 +66,3 @@ end)
 -- Bufferline
 vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>", { silent = true })
 vim.keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { silent = true })
-
-

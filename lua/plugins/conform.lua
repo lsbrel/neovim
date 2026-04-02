@@ -10,6 +10,8 @@ return {
 				sql = { "sqlfmt" },
 				lua = { "stylua" },
 				go = { "gofumpt" },
+				c = { "clang-format" },
+				cpp = { "clang-format" },
 			},
 		})
 	end,
