@@ -9,10 +9,7 @@ return {
 			vim.lsp.enable("docker_compose_language_service")
 			vim.lsp.enable("sqls")
 			vim.lsp.enable("gopls")
-<<<<<<< Updated upstream
-=======
 			vim.lsp.enable("vimls")
->>>>>>> Stashed changes
 			vim.lsp.enable("clangd")
 
 			vim.lsp.config("lua_ls", {

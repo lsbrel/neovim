@@ -38,11 +38,7 @@ vim.keymap.set("n", "<leader>q", function()
 
 		local buffer_count = vim.fn.getbufinfo({ buflisted = 1 })
 		if #buffer_count == 1 then
-<<<<<<< Updated upstream
 			vim.cmd("Neotree show")
-=======
-			vim.cmd("Neotree focus")
->>>>>>> Stashed changes
 		end
 	end
 end)
