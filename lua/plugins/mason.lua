@@ -21,6 +21,18 @@ return {
 					},
 				},
 			})
+
+			vim.lsp.config("pylsp", {
+				settings = {
+					pylsp = {
+						plugins = {
+							pycodestyle = {
+								ignore = { "E501" }, -- Desabilitando erros de linhas muitos longas
+							},
+						},
+					},
+				},
+			})
 		end,
 	},
 	{
