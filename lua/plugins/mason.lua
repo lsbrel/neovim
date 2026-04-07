@@ -11,6 +11,7 @@ return {
 			vim.lsp.enable("gopls")
 			vim.lsp.enable("vimls")
 			vim.lsp.enable("clangd")
+			vim.lsp.enable("rust_analyzer")
 
 			vim.lsp.config("lua_ls", {
 				settings = {
