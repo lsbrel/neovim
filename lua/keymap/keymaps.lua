@@ -15,6 +15,7 @@ local comments = require("Comment.api")
 vim.keymap.set({ "n", "v" }, "<C-;", comments.toggle.blockwise.current)
 
 -- Geral
+vim.keymap.set("n", "<S-q>", "%") -- Ir para fechamento
 vim.keymap.set("n", "<C-s>", ":w<CR>") -- Salvar
 vim.keymap.set("i", "<C-s>", "<Esc>:w<CR>") -- Salvar
 
