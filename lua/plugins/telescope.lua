@@ -12,6 +12,9 @@ return {
 				mappings = {
 					n = {
 						["dd"] = actions.delete_buffer,
+            ["<CR>"] = function ()
+
+            end
 					},
 				},
 			},

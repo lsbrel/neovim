@@ -4,9 +4,8 @@ local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<C-p>", builtin.find_files, { desc = "Encontrar Arquivos via telescop" })
 vim.keymap.set("n", "<C-o>", builtin.buffers, { desc = "Buscar por buffers" })
 
--- Neotree
-vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>")
-vim.keymap.set("n", "<leader>w", ":Neotree focus<CR>")
+-- Nvimtree
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 vim.keymap.set("n", "<leader><Right>", "<C-w>l")
 vim.keymap.set("n", "<leader><Left>", "<C-w>h")
 
@@ -20,26 +19,26 @@ vim.keymap.set("n", "<C-s>", ":w<CR>") -- Salvar
 vim.keymap.set("i", "<C-s>", "<Esc>:w<CR>") -- Salvar
 
 vim.keymap.set("n", "<C-z>", "u") -- Desfazer
-vim.keymap.set("i", "<C-z>", "<Esc>u<CR>")
 
 vim.keymap.set("v", "<C-x>", "d") -- Recortar
 vim.keymap.set("v", "<C-c>", "y") -- Copiar
 vim.keymap.set("n", "<C-v>", "p") -- Colar
 vim.keymap.set("n", "<leader>q", function()
-	if vim.bo.filetype == "neo-tree" then
+	print(vim.bo.filetype)
+	if vim.bo.filetype == "NvimTree" then
 		vim.cmd(":qa")
 	else
 		local current = vim.api.nvim_get_current_buf()
 		vim.cmd("bnext")
 
-		if vim.bo.filetype == "neo-tree" then
+		if vim.bo.filetype == "NvimTree" then
 			vim.cmd("bnext")
 		end
 		vim.api.nvim_buf_delete(current, { force = false })
 
 		local buffer_count = vim.fn.getbufinfo({ buflisted = 1 })
 		if #buffer_count == 1 then
-			vim.cmd("Neotree show")
+			vim.cmd("NvimTreeFocus")
 		end
 	end
 end)

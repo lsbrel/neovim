@@ -16,8 +16,8 @@ return {
 				show_tab_indicators = true,
 				offsets = {
 					{
-						filetype = "neo-tree",
-						text = "File Explorer",
+						filetype = "NvimTree",
+						text = "NvimTree",
 						text_align = "left",
 						separator = true,
 					},
